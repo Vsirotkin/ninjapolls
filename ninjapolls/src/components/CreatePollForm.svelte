@@ -6,7 +6,7 @@
   };
 
   const submitHandler = () => {
-    console.log(fields);
+
   };
 </script>
 

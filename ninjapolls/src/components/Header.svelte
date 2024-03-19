@@ -14,6 +14,7 @@
         text-align: center;
     }
     img {
-        max-width: 180px;  
+        max-width: 180px;
+        border-radius: 8px; 
     }
 </style>
