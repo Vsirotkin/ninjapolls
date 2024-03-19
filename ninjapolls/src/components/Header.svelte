@@ -1,6 +1,6 @@
 <header>
     <h1>
-        <img src="/img/poll_station.jpg" alt="Poll Ninja Logo">
+        <img src="/img/voting.webp" alt="Poll Ninja Logo">
     </h1>
 </header>
 

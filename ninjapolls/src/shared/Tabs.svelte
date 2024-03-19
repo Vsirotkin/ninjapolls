@@ -4,13 +4,25 @@
 
   export let items;
   export let activeItem;
+
+  function handleKeyDown(event, item) {
+    if (event.key === "Enter" || event.key === " ") {
+      dispatch("tabChange", item);
+    }
+  }
 </script>
 
 <div class="tabs">
   <ul>
     {#each items as item}
       <li on:click={() => dispatch("tabChange", item)}>
-        <div class:active={item === activeItem}>{item}</div>
+        <div
+          class:active={item === activeItem}
+          tabindex="0"
+          on:keydown={(e) => handleKeyDown(e, item)}
+        >
+          {item}
+        </div>
       </li>
     {/each}
   </ul>
