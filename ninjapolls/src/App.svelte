@@ -15,22 +15,12 @@
   };
 
   // polls
-  let polls = [
-    {
-      id: 1,
-      question: "Python or JS?",
-      answerA: "Python",
-      answerB: "JS",
-      votesA: 9,
-      votesB: 5,
-    },
-  ];
+  let polls = [];
 
   const handleAdd = (e) => {
     const poll = e.detail;
     polls = [poll, ...polls];
     activeItem = "Current Polls";
-    console.log(polls);
   };
 
   // handleVote
