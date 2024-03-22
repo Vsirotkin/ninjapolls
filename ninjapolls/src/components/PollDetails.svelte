@@ -1,6 +1,6 @@
 <script>
   import Card from "../shared/Card.svelte";
-  import PollStore from "../stores/PollStore.js"
+  import PollStore from "../stores/PollStore"
 
   export let poll;
 
