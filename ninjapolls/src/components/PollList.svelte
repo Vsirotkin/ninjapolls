@@ -1,5 +1,4 @@
 <script>
-  // import { onMount, onDestroy } from 'svelte';
   import PollStore from '../stores/PollStore';
   import PollDetails from "../components/PollDetails.svelte";
 

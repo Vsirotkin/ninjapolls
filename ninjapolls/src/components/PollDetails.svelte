@@ -12,23 +12,6 @@
   $: percentB = Math.floor(100 / totalVotes * poll.votesB);
 
 
-  // handling votes
-  // const handleVote = (option, id) => {
-  //   const {id, option} = e.detail;
-
-  //   let copiedPolls = [...polls];
-  //   let upvotedPoll = copiedPolls.find(poll) => (poll.id == id);
-
-  //   if (option === 'a'){
-  //     upvotedPoll.vitesA++;
-  //   }
-  //   if (option == 'b'){
-  //     upvotedPoll.votesB++;
-  //   }
-
-  //   polls = copiedPolls;
-  // };
-
   const handleVote = (option, id) => {
     PollStore.update(currentPolls => {
       let copiedPolls = [...currentPolls];
