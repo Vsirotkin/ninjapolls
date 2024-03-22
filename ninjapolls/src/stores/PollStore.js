@@ -6,8 +6,8 @@ const PollStore = writable([
         question: 'What is your favorite programming language?',
         answerA: 'Python',
         answerB: 'JavaScript',
-        votesA: 12,
-        votesB: 10
+        votesA: 0,
+        votesB: 0,
     },
 ]);
 
