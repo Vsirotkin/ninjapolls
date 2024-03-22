@@ -1,5 +1,5 @@
 <script>
-  import PollStore from "../stores/PollStore";
+  import PollStore from "../stores/PollStore.js";
   import { createEventDispatcher } from "svelte";
   import Button from "../shared/Button.svelte";
 

@@ -19,23 +19,8 @@
   };
 
   // handleVote
-  const handleVote = (e) => {
-    const { id, option } = e.detail;
-
-    // entering an array of polls
-    let copiedPolls = [...polls];
-    // find poll customer is voting on by id in the handleVote
-    let upvotedPoll = copiedPolls.find((poll) => poll.id == id);
-    // choose a or b to to vote for and increase
-    if (option === "a") {
-      upvotedPoll.votesA++;
-    }
-    if (option === "b") {
-      upvotedPoll.votesB++;
-    }
-    // updating the array of polls
-    polls = copiedPolls;
-  };
+  // const handleVote = (e) => {
+  // };
 </script>
 
 <Header />
@@ -43,7 +28,7 @@
 <main>
   <Tabs {activeItem} {items} on:tabChange={tabChange} />
   {#if activeItem === "Current Polls"}
-    <PollList on:vote={handleVote} />
+    <PollList />
   {:else if activeItem === "Add New Poll"}
     <CreatePollForm on:add={handleAdd} />
   {/if}

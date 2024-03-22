@@ -13,13 +13,14 @@
 </script>
 
 <div class="tabs">
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <ul>
     {#each items as item}
       <li on:click={() => dispatch("tabChange", item)}>
         <div
           class:active={item === activeItem}
           tabindex="0"
-          on:keydown={(e) => handleKeyDown(e, item)}
+          on:keydown|preventDefault={(e) => handleKeyDown(e, item)}
         >
           {item}
         </div>

@@ -1,9 +1,8 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  import Card from "./../shared/Card.svelte";
+  import Card from "../shared/Card.svelte";
+  import PollStore from "../stores/PollStore.js"
 
   export let poll;
-  const dispatch = createEventDispatcher();
 
   // reactive values
   $: totalVotes = poll.votesA + poll.votesB;
@@ -14,9 +13,38 @@
 
 
   // handling votes
+  // const handleVote = (option, id) => {
+  //   const {id, option} = e.detail;
+
+  //   let copiedPolls = [...polls];
+  //   let upvotedPoll = copiedPolls.find(poll) => (poll.id == id);
+
+  //   if (option === 'a'){
+  //     upvotedPoll.vitesA++;
+  //   }
+  //   if (option == 'b'){
+  //     upvotedPoll.votesB++;
+  //   }
+
+  //   polls = copiedPolls;
+  // };
+
   const handleVote = (option, id) => {
-    dispatch("vote", { option, id });
-  };
+    PollStore.update(currentPolls => {
+      let copiedPolls = [...currentPolls];
+      let upvotedPoll = copiedPolls.find(poll => poll.id === id);
+  
+      if (option === 'a') {
+          upvotedPoll.votesA++;
+      }
+      if (option === 'b') {
+          upvotedPoll.votesB++;
+      }
+  
+      return copiedPolls;
+    });
+};
+
 </script>
 
 <Card>
@@ -28,6 +56,7 @@
       <div class="percent percent-a" style="width: {percentA}%"></div>
       <span>{poll.answerA} ({poll.votesA})</span>
     </div>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="answer" on:click={() => handleVote("b", poll.id)}>
       <div class="percent percent-b" style="width: {percentB}%"></div>
       <span>{poll.answerB} ({poll.votesB})</span>
