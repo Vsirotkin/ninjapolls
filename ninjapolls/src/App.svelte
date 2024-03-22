@@ -18,9 +18,6 @@
     activeItem = "Current Polls";
   };
 
-  // handleVote
-  // const handleVote = (e) => {
-  // };
 </script>
 
 <Header />
